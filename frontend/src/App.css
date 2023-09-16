@@ -1,0 +1,11 @@
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 0.8;
+    margin-bottom: 4px;
+  }
