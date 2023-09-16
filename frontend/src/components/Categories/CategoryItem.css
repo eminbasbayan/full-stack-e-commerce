@@ -1,0 +1,28 @@
+.categories .category-item{
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.categories .category-item a{
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.categories .category-item .category-image{
+        width: 100%;
+        transition: transform ease .2s;
+}
+
+.categories .category-item .category-image:hover{
+    transform: scale(1.1);
+}
+
+
