@@ -1,0 +1,35 @@
+.single-topbar {
+    margin-top: 30px;
+  }
+  
+  .single-content {
+    margin: 30px 0;
+  }
+  
+  .single-content .site-main {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* responsive */
+  
+  @media (max-width: 768px) {
+    .site-main {
+      flex-direction: column;
+    }
+    .site-main .product-gallery,
+    .site-main .product-info {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .site-main .product-info {
+      margin-top: 30px;
+    }
+  
+    .site-main .values-list span {
+      padding: 6px !important;
+      display: inline-block;
+    }
+  }
+  
