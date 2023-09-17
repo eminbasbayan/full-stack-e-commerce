@@ -1,0 +1,129 @@
+/*! comment item start  */
+
+.tab-panel-reviews .comment-star {
+  display: flex;
+}
+
+.tab-panel-reviews .comment-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.tab-panel-reviews .comment-item {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.tab-panel-reviews .comment-avatar img {
+  border-radius: 50%;
+  display: flex;
+}
+
+.tab-panel-reviews .comment-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.tab-panel-reviews .comment-star i {
+  color: gold;
+  font-size: 12px;
+}
+
+.tab-panel-reviews .comment-meta {
+  font-size: 12px;
+}
+
+.tab-panel-reviews .comment-description p {
+  font-size: 14px;
+}
+/*! comment item end  */
+
+/*! comment form start  */
+
+.tab-panel-reviews span.required {
+  color: #e51414;
+}
+
+.tab-panel-reviews .review-form-wrapper h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px 0;
+  border-bottom: 1px solid #dee0ea;
+  padding-bottom: 16px;
+}
+
+.tab-panel-reviews .comment-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.tab-panel-reviews .comment-notes {
+  font-size: 14px;
+}
+
+.tab-panel-reviews .comment-form-rating {
+  font-size: 14px;
+}
+
+.tab-panel-reviews .comment-form-rating .stars {
+  display: flex;
+}
+
+.tab-panel-reviews .comment-form-rating .stars a {
+  display: flex;
+  padding: 4px 10px;
+  border-right: 1px solid #dee0ea;
+  margin-top: 5px;
+}
+
+.tab-panel-reviews .comment-form-rating .star.active i {
+  color: gold;
+}
+
+.tab-panel-reviews .comment-form-rating .stars a:hover i {
+  color: gold;
+}
+
+.tab-panel-reviews .comment-form-rating .stars a:first-child {
+  padding-left: 0;
+}
+
+.tab-panel-reviews .comment-form-rating .stars a:last-child {
+  border-right: unset;
+}
+
+.tab-panel-reviews .comment-form-rating .stars i {
+  font-size: 10px;
+  color: #dee0ea;
+  transition: 0.2s ease color;
+}
+
+.comment-form .form-comment {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  row-gap: 4px;
+}
+
+.comment-form .comment-form-author {
+  margin: 10px 0;
+}
+
+.comment-form .comment-form-cookies {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  font-size: 14px;
+}
+
+.comment-form input.submit {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*! comment form end  */
