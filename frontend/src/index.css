@@ -147,3 +147,13 @@ input[type="number"]::-webkit-inner-spin-button {
     max-width: 350px;
   }
 }
+
+/* react-slick-css */
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
