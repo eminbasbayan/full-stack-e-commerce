@@ -1,0 +1,166 @@
+/*! modal search start  */
+.modal-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 999;
+  opacity: 0;
+  transition: 0.3s ease all;
+}
+
+.modal-search.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-search::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.modal-wrapper {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 10;
+  padding: 30px;
+}
+
+.modal-search .modal-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.modal-search .modal-text {
+  font-size: 14px;
+  color: #7a7a7a;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dee0ea;
+}
+
+.modal-search .search-form {
+  margin-top: 15px;
+  display: flex;
+  position: relative;
+}
+
+.modal-search .search-form::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #dee0ea;
+  position: absolute;
+  bottom: -15px;
+}
+
+.modal-search .search-form input {
+  width: 100%;
+  max-height: 42px;
+  border-color: #dee0ea !important;
+}
+
+.modal-search .search-form button {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee0ea;
+}
+
+.modal-search .search-form button i {
+  font-size: 18px;
+  color: #7a7a7a;
+}
+
+.modal-search .search-results {
+  margin-top: 30px;
+}
+
+.modal-search .search-heading {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #dee0ea;
+}
+
+.modal-search .search-heading h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal-search .results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: 1px solid #dee0ea;
+}
+
+.modal-search .result-item {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #dee0ea;
+  border-right: 1px solid #dee0ea;
+  transition: background-color 0.2s eae;
+}
+
+.modal-search .result-item:hover {
+  background-color: #f9f9f9;
+}
+
+.modal-search .search-thumb {
+  max-width: 65px;
+  width: 100%;
+}
+
+.modal-search .search-info {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-search .search-sku {
+  color: #7a7a7a;
+  margin: 2px 0;
+}
+
+.modal-search .search-price {
+  font-weight: 600;
+  color: #dc3545;
+}
+
+.modal-search .bi-x-circle {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*! modal search end  */
+
+/* search responsive  */
+
+@media (max-width: 992px) {
+  .modal-search .modal-wrapper {
+    max-width: 370px;
+  }
+  .modal-search .results {
+    grid-template-columns: 1fr;
+  }
+}
