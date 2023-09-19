@@ -1,11 +1,10 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartProvider";
 import "./ProductItem.css";
 
-const ProductItem = ({ productItem, setCartItems }) => {
-  const addToCart = (cartItem) => {
-    // setCartItems([...cartItems, cartItem]); 1. yol
-    setCartItems((prevCart) => [...prevCart, cartItem]);
-  };
+const ProductItem = ({ productItem }) => {
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="product-item glide__slide glide__slide--active">
