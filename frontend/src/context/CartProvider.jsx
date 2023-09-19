@@ -16,14 +16,20 @@ const CartProvider = ({ children }) => {
 
   const addToCart = (cartItem) => {
     // setCartItems([...cartItems, cartItem]); 1. yol
-    setCartItems((prevCart) => [...prevCart, cartItem]);
+    setCartItems((prevCart) => [
+      ...prevCart,
+      {
+        ...cartItem,
+        quantity: cartItem.quantity ? cartItem.quantity : 1,
+      },
+    ]);
   };
 
   const removeFromCart = (itemId) => {
     const filteredCartItems = cartItems.filter((cartItem) => {
       return cartItem.id !== itemId;
     });
-    
+
     setCartItems(filteredCartItems);
   };
 
@@ -32,7 +38,7 @@ const CartProvider = ({ children }) => {
       value={{
         cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
       }}
     >
       {children}
