@@ -156,7 +156,7 @@ const Header = ({ setIsSearchShow }) => {
                         </div>
                         <div className="megamenu-single">
                           <a href="#">
-                            <img src="img/mega-menu.jpg" alt="" />
+                            <img src="/img/mega-menu.jpg" alt="" />
                           </a>
                           <h3 className="megamenu-single-title">
                             JOIN THE LAYERING GANG
