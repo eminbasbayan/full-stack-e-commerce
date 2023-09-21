@@ -45,27 +45,43 @@ router.get("/:productId", async (req, res) => {
 
 // Ürün güncelleme (Update)
 router.put("/:productId", async (req, res) => {
-    try {
-      const productId = req.params.productId;
-      const updates = req.body;
-  
-      const existingProduct = await Product.findById(productId);
-  
-      if (!existingProduct) {
-        return res.status(404).json({ error: "Product not found." });
-      }
-  
-      const updatedProduct = await Product.findByIdAndUpdate(
-        productId,
-        updates,
-        { new: true }
-      );
-  
-      res.status(200).json(updatedProduct);
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ error: "Server error." });
+  try {
+    const productId = req.params.productId;
+    const updates = req.body;
+
+    const existingProduct = await Product.findById(productId);
+
+    if (!existingProduct) {
+      return res.status(404).json({ error: "Product not found." });
     }
-  });
+
+    const updatedProduct = await Product.findByIdAndUpdate(productId, updates, {
+      new: true,
+    });
+
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
+// Ürün silme (Delete)
+router.delete("/:productId", async (req, res) => {
+  try {
+    const productId = req.params.productId;
+
+    const deletedProduct = await Product.findByIdAndRemove(productId);
+
+    if (!deletedProduct) {
+      return res.status(404).json({ error: "Product not found." });
+    }
+
+    res.status(200).json(deletedProduct);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
 
 module.exports = router;
