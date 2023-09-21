@@ -71,7 +71,7 @@ router.get("/code/:couponCode", async (req, res) => {
   }
 });
 
-// Kategori güncelleme (Update)
+// Kupon güncelleme (Update)
 router.put("/:couponId", async (req, res) => {
   try {
     const couponId = req.params.couponId;
@@ -93,5 +93,23 @@ router.put("/:couponId", async (req, res) => {
     res.status(500).json({ error: "Server error." });
   }
 });
+
+// Kupon silme (Delete)
+router.delete("/:couponId", async (req, res) => {
+    try {
+      const couponId = req.params.couponId;
+  
+      const deletedCoupon = await Coupon.findByIdAndRemove(couponId);
+  
+      if (!deletedCoupon) {
+        return res.status(404).json({ error: "Coupon not found." });
+      }
+  
+      res.status(200).json(deletedCoupon);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error: "Server error." });
+    }
+  });
 
 module.exports = router;
