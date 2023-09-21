@@ -34,7 +34,10 @@ router.post("/register", async (req, res) => {
     await newUser.save();
 
     res.status(201).json(newUser);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
 });
 
 // Kullanıcı girişi (Login)
