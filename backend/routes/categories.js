@@ -11,22 +11,41 @@ router.post("/", async (req, res) => {
     await newCategory.save();
 
     res.status(201).json(newCategory);
-
   } catch (error) {
     console.log(error);
   }
 });
 
-// Tüm kategorileri getirme (Read- All)
+// Tüm kategorileri getirme (Read - All)
 router.get("/", async (req, res) => {
-   try {
+  try {
     const categories = await Category.find();
 
     res.status(200).json(categories);
-   } catch (error) {
+  } catch (error) {
     console.log(error);
-    res.status(500).json({error: "Server error."})
-   }
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
+// Belirli bir kategoriyi getirme (Read - Single)
+router.get("/:categoryId", async (req, res) => {
+  try {
+    const categoryId = req.params.categoryId;
+
+    try {
+      const category = await Category.findById(categoryId);
+
+      res.status(200).json(category);
+    } catch (error) {
+      console.log(error);
+      res.status(404).json({ error: "Category not found." });
+    }
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
 });
 
 module.exports = router;
