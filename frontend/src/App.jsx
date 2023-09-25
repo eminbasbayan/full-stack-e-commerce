@@ -9,7 +9,8 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 import "./App.css";
-import AdminUserPage from "./pages/admin/AdminUserPage";
+import UserPage from "./pages/Admin/UserPage";
+import CategoryPage from "./pages/Admin/Categories/CategoryPage";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       <Route path="/product/:id" element={<ProductDetailsPage />} />
       <Route path="/blog/:id" element={<BlogDetailsPage />} />
       <Route path="/admin/*">
-        <Route path="users" element={<AdminUserPage />} />
+        <Route path="users" element={<UserPage />} />
+        <Route path="categories" element={<CategoryPage />} />
       </Route>
     </Routes>
   );
