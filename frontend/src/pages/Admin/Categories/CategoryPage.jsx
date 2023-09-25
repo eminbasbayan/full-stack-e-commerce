@@ -34,8 +34,8 @@ const CategoryPage = () => {
             Düzenle
           </Button>
           <Popconfirm
-            title="Kullanıcıyı Sil"
-            description="Kullanıcıyı silmek istediğinizden emin misiniz?"
+            title="Kategoriyi Sil"
+            description="Kategoriyi silmek istediğinizden emin misiniz?"
             okText="Yes"
             cancelText="No"
             onConfirm={() => deleteCategory(record._id)}
