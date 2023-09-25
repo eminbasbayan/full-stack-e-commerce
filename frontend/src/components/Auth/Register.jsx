@@ -1,4 +1,17 @@
+import { useState } from "react";
+
 const Register = () => {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <div className="account-column">
       <h2>Register</h2>
@@ -8,7 +21,7 @@ const Register = () => {
             <span>
               Username <span className="required">*</span>
             </span>
-            <input type="text" />
+            <input type="text" onChange={handleInputChange} name="username" />
           </label>
         </div>
         <div>
@@ -16,7 +29,7 @@ const Register = () => {
             <span>
               Email address <span className="required">*</span>
             </span>
-            <input type="email" />
+            <input type="email" onChange={handleInputChange} name="email" />
           </label>
         </div>
         <div>
@@ -24,7 +37,11 @@ const Register = () => {
             <span>
               Password <span className="required">*</span>
             </span>
-            <input type="password" />
+            <input
+              type="password"
+              onChange={handleInputChange}
+              name="password"
+            />
           </label>
         </div>
         <div className="privacy-policy-text remember">
