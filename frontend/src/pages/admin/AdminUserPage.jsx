@@ -1,4 +1,4 @@
-import { Table, message } from "antd";
+import { Button, Popconfirm, Table, message } from "antd";
 import { useCallback, useEffect, useState } from "react";
 
 const AdminUserPage = () => {
@@ -8,21 +8,21 @@ const AdminUserPage = () => {
 
   const columns = [
     {
-        title: "Avatar",
-        dataIndex: "avatar",
-        key: "avatar",
-        render: (imgSrc) => (
-          <img
-            src={imgSrc}
-            alt="Avatar"
-            style={{
-              width: "50px",
-              height: "50px",
-              borderRadius: "50%",
-            }}
-          />
-        ),
-      },
+      title: "Avatar",
+      dataIndex: "avatar",
+      key: "avatar",
+      render: (imgSrc) => (
+        <img
+          src={imgSrc}
+          alt="Avatar"
+          style={{
+            width: "50px",
+            height: "50px",
+            borderRadius: "50%",
+          }}
+        />
+      ),
+    },
     {
       title: "Username",
       dataIndex: "username",
@@ -38,7 +38,24 @@ const AdminUserPage = () => {
       dataIndex: "role",
       key: "role",
     },
-  
+    {
+      title: "Actions",
+      dataIndex: "actions",
+      key: "actions",
+      render: (_, record) => (
+        <Popconfirm
+          title="Kullanıcıyı Sil"
+          description="Kullanıcıyı silmek istediğinizden emin misiniz?"
+          okText="Yes"
+          cancelText="No"
+          onConfirm={() => deleteUser(record.email)}
+        >
+          <Button type="primary" danger>
+            Delete
+          </Button>
+        </Popconfirm>
+      ),
+    },
   ];
 
   const fetchUsers = useCallback(async () => {
@@ -51,14 +68,31 @@ const AdminUserPage = () => {
         const data = await response.json();
         setDataSource(data);
       } else {
-        message.error("Giriş başarısız.");
+        message.error("Veri getirme başarısız.");
       }
     } catch (error) {
-      console.log("Giriş hatası:", error);
+      console.log("Veri hatası:", error);
     } finally {
       setLoading(false);
     }
   }, [apiUrl]);
+
+  const deleteUser = async (userEmail) => {
+    try {
+      const response = await fetch(`${apiUrl}/api/users/${userEmail}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        message.success("Kullanıcı başarıyla silindi.");
+        fetchUsers();
+      } else {
+        message.error("Silme işlemi başarısız.");
+      }
+    } catch (error) {
+      console.log("Silme hatası:", error);
+    }
+  };
 
   useEffect(() => {
     fetchUsers();
