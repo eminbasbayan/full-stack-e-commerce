@@ -75,7 +75,7 @@ const CouponPage = () => {
       });
 
       if (response.ok) {
-        message.success("Kategori başarıyla silindi.");
+        message.success("Kupon başarıyla silindi.");
         fetchCategories();
       } else {
         message.error("Silme işlemi başarısız.");
