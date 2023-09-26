@@ -25,8 +25,6 @@ const ProductDetailsPage = () => {
     fetchSingleProduct();
   }, [apiUrl, productId]);
 
-  console.log(singleProduct);
-
   return singleProduct ? (
     <ProductDetails singleProduct={singleProduct} />
   ) : (
