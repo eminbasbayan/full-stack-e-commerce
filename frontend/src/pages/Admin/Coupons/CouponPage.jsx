@@ -29,7 +29,7 @@ const CouponPage = () => {
         <Space>
           <Button
             type="primary"
-            onClick={() => navigate(`/admin/categories/update/${record._id}`)}
+            onClick={() => navigate(`/admin/coupons/update/${record._id}`)}
           >
             Güncelle
           </Button>
