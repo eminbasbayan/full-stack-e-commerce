@@ -11,8 +11,9 @@ const userRoute = require("./users.js");
 // Her rotayı ilgili yol altında kullanıyoruz
 router.use("/categories", categoryRoute);
 router.use("/auth", authRoute);
-router.use("/products", productRoute);
+router.use("/products", productRoute); 
 router.use("/coupons", couponRoute);
 router.use("/users", userRoute);
 
 module.exports = router;
+ 
