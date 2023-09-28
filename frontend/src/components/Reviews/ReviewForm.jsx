@@ -1,23 +1,59 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+import { message } from "antd";
 
-const ReviewForm = () => {
+const ReviewForm = ({ singleProduct }) => {
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
+  const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : null;
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
   const handleRatingChange = (e, newRating) => {
     e.preventDefault();
     setRating(newRating);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
-      rating: rating,
-      review: review,
+      reviews: [
+        ...singleProduct.reviews,
+        {
+          text: review,
+          rating: parseInt(rating),
+          user: user.id,
+        },
+      ],
     };
 
-    console.log(formData);
+    try {
+      const res = await fetch(`${apiUrl}/api/products/${singleProduct._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!res.ok) {
+        message.error("Bir şeyler yanlış gitti.");
+        return;
+      }
+
+      const data = await res.json();
+      console.log(data);
+      setReview("");
+      setRating(0);
+      message.success("Yorum başarıyla eklendi.");
+    } catch (error) {
+      console.log(error);
+      message.error("Bir şeyler yanlış gitti.");
+    }
   };
+
+  console.log(singleProduct);
 
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
@@ -41,7 +77,7 @@ const ReviewForm = () => {
           <a
             href="#"
             className={`star ${rating === 2 && "active"}`}
-            onClick={(e) => handleRatingChange(e, 3)}
+            onClick={(e) => handleRatingChange(e, 2)}
           >
             <i className="bi bi-star-fill"></i>
             <i className="bi bi-star-fill"></i>
@@ -88,6 +124,7 @@ const ReviewForm = () => {
           cols="50"
           rows="10"
           onChange={(e) => setReview(e.target.value)}
+          value={review}
         ></textarea>
       </div>
       <div className="comment-form-cookies">
@@ -106,3 +143,7 @@ const ReviewForm = () => {
 };
 
 export default ReviewForm;
+
+ReviewForm.propTypes = {
+  singleProduct: PropTypes.object,
+};
