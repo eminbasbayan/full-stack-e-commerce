@@ -29,7 +29,7 @@ const Reviews = ({ active, singleProduct, setSingleProduct }) => {
   }, [apiUrl]);
 
 
-  singleProduct.reviews.forEach((review) => {
+  singleProduct && singleProduct.reviews.forEach((review) => {
     const matchingUsers = users?.filter((user) => user._id === review.user);
 
     matchingUsers.forEach((matchingUser) => {
@@ -42,7 +42,7 @@ const Reviews = ({ active, singleProduct, setSingleProduct }) => {
 
   return (
     <div className={`tab-panel-reviews ${active}`}>
-      {singleProduct.reviews.length > 0 ? (
+      {singleProduct && singleProduct.reviews.length > 0 ? (
         <>
           <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems</h3>
           <div className="comments">

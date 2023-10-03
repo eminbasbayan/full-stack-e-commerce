@@ -1,0 +1,6 @@
+1- Admin Panel Logo Alanı - Dinamik Logo 
+2- Blog İşlemleri ve Blog Detay Sayfası Oluşturma
+3- Contact (İletişim) Sayfası ve Admin Panel Bağlantısı
+4- Profil Sayfası Oluşturma ve Dinamikleştirme
+5- Kategoriye Göre Ürünlerin Listelendiği Sayfanın Oluşturulması
+6- Slider Ekleme Alanı ve Admin Panel Bağlantısı
