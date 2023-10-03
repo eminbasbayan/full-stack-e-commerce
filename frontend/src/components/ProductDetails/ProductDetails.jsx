@@ -1,4 +1,4 @@
-import Breadcrumb from "./Breadcrumb/breadcrumb";
+import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import Gallery from "./Gallery/Gallery";
 import PropTypes from "prop-types";
 import Info from "./Info/Info";
