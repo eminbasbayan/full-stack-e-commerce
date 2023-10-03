@@ -1,6 +1,6 @@
 # 🚀 React, Express.js, MongoDB ve Ant Design ile Full Stack E-Ticaret Sitesi Geliştirme Kursu 🛒
 
-[![Kurs Linki](https://github.com/eminbasbayan/full-stack-e-commerce/assets/48470345/9522b3fd-ff4e-42a7-a290-e129f979c8c4)](https://www.udemy.com/kursun-linki-buraya-gelecek)
+[![Kurs Linki](https://github.com/eminbasbayan/full-stack-e-commerce/assets/48470345/9522b3fd-ff4e-42a7-a290-e129f979c8c4)](https://www.udemy.com/course/full-stack-e-ticaret-sitesi-yapimi/?referralCode=E81C81855969D02AB79C)
 
 Merhaba ve web geliştirme dünyasına adım atmak istiyorsanız, doğru yerdesiniz! Bu kurs, sıfırdan başlayarak tam bir Full Stack (tam yığın) web geliştirici olmanıza yardımcı olacak.
 
@@ -32,4 +32,4 @@ Merhaba ve web geliştirme dünyasına adım atmak istiyorsanız, doğru yerdesi
 
 Bu kurs, temel bir Full Stack web geliştirme eğitimi sunar ve kariyerinizi veya kendi projelerinizi başlatma yolunda önemli bir adım olabilir. Şimdi kaydolun ve yeni bir kariyere veya projeye başlamak için bu fırsatı yakalayın! 🌐
 
-[![Kurs Linki](https://github.com/eminbasbayan/full-stack-e-commerce/assets/48470345/f7b82073-cf03-47e6-907b-59ac63806fe0)](https://www.udemy.com/kursun-linki-buraya-gelecek)
+[![Kurs Linki](https://github.com/eminbasbayan/full-stack-e-commerce/assets/48470345/f7b82073-cf03-47e6-907b-59ac63806fe0)](https://www.udemy.com/course/full-stack-e-ticaret-sitesi-yapimi/?referralCode=E81C81855969D02AB79C)
